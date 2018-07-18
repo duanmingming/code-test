@@ -7,7 +7,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-// 		const timeout = ms => new Promise((resolve, reject) => {
+// const timeout = ms => new Promise((resolve, reject) => {
 // 	setTimeout(() => {
 // 		resolve();
 // 	}, ms);
@@ -28,25 +28,14 @@
 // 	return 3;
 // });
 
-// var result = [];
 
-// ajax1().then( data => {
-// 	result.push(data);
-// 	ajax2().then( data => {
-// 		result.push(data);
-// 		ajax3();
-// 	});
-// });
 
 // const mergePromise = ajaxArray => {
 // 	// 在这里实现你的代码
-//   for(let i=0; i<ajaxArray.length; i = i+2){
-//   	ajaxArray[i]().then(ajaxArray[i+1] => {
-//   		data.push(resolve);
-//   	})
-//   }
-
-//   return data;
+//  	// let p = Promise.all(ajaxArray);
+//  	// p.then(data => console.log(data));
+//  	// return p;
+//  	return Promise.all(ajaxArray);
 // };
 
 // mergePromise([ajax1, ajax2, ajax3]).then(data => {
