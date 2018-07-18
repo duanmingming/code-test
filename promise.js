@@ -83,20 +83,28 @@ const getJSON = function(url){
 // 	.then(Promise.resolve(3))
 // 	.then(console.log)
 
-const promise = new Promise((resolve, reject) => {
-setTimeout(() => {
-console.log('开始');
-resolve('success');
-}, 5000);
-});
+// const promise = new Promise((resolve, reject) => {
+// setTimeout(() => {
+// console.log('开始');
+// resolve('success');
+// }, 5000);
+// });
  
-const start = Date.now();
-promise.then((res) => {
-console.log(res, Date.now() - start);
-});
+// const start = Date.now();
+// promise.then((res) => {
+// console.log(res, Date.now() - start);
+// });
  
-promise.then((res) => {
-console.log(res, Date.now() - start);
-});
+// promise.then((res) => {
+// console.log(res, Date.now() - start);
+// });
+
+
+var x=1;
+if(function f(){}){
+	x += typeof f;
+}
+
+
 
 

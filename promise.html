@@ -28,6 +28,11 @@
 // 	return 3;
 // });
 
+// const ajax4 = () => timeout(2000).then(() => {
+// 	console.log('4');
+// 	return ajax3;
+// });
+
 
 
 // const mergePromise = ajaxArray => {
@@ -35,7 +40,18 @@
 //  	// let p = Promise.all(ajaxArray);
 //  	// p.then(data => console.log(data));
 //  	// return p;
-//  	return Promise.all(ajaxArray);
+//  	//return Promise.all(ajaxArray.map( item => item() ));
+//  	// for(let i=0; i<ajaxArray.length; i++){
+//  	// 	ajaxArray[i]().then(data => {
+//  	// 		result.push(data);
+
+//  	// 	})
+//  	// }
+
+//  	// ajaxArray[i]().then( value => {
+//  	// 	result.push(value);
+//  	// 	ajaxArray[i+1]();
+//  	// } )
 // };
 
 // mergePromise([ajax1, ajax2, ajax3]).then(data => {
