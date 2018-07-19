@@ -106,5 +106,8 @@ if(function f(){}){
 }
 
 
+function test(){}
+
+
 
 
