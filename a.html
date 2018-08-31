@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>input</h1>
+    <input type="text">
+    <div id="panel" style="background:red;width:200px;height:200px"></div>
+
+<script>
+// 防抖
+
+function debounce(func, delay){
+    var timeout;
+    return function(e){
+        console.log("清除", timeout, e.target.value)
+        clearTimeout(timeout);
+        var context = this,
+            args = arguments;
+        console.log("新的", timeout, e.target.value)
+        timeout = setTimeout(function(){
+            console.log('------')
+            func.apply(context, args);
+        }, delay)
+    }
+}
+
+// 节流
+
+function throttle(fn, threshhold){
+    var timeout;
+    var start = new Date;
+    var threshhold = threshhold || 160;
+
+    return function(){
+        var context = this,
+            args = arguments,
+            curr = new Date() - 0;
+
+        clearTimeout(timeout);
+        if(curr - start >= threshhold){
+            console.log("now", curr, curr - start)
+            fn.apply(context, args)
+            start = curr
+        }else{
+            timeout = setTimeout(function(){
+                fn.apply(context, args)
+            }, threshhold)
+        }
+    }
+}
+
+var mousemove = throttle(function(e){
+    console.log(e.pageX, e.pageY)
+}, 1000);
+
+document.querySelector("#panel").addEventListener('mousemove', mousemove);
+
+var validate = debounce(function(e){
+    console.log("change", e.target.value, new Date - 0)
+}, 1380);
+
+document.querySelector("input").addEventListener('input', validate);
+
+</script>
+    
+</body>
+</html>
+
+
